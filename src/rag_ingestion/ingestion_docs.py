@@ -4,8 +4,12 @@ from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, StorageCon
 from llama_index.core.node_parser import SimpleNodeParser
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.vector_stores.chroma import ChromaVectorStore
-
-from src.rag_ingestion.config.doc_ingestion_settings import DocIngestionSettings
+try:
+    from src.rag_ingestion.config.doc_ingestion_settings import DocIngestionSettings
+except ModuleNotFoundError as exc:
+    if exc.name != "src":
+        raise
+    from config.doc_ingestion_settings import DocIngestionSettings
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"

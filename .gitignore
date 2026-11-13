@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+#pdfs
+src/docs_dir/
+src/vector_store/
