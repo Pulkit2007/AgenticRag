@@ -16,7 +16,7 @@ logger.info("Loading HuggingFace embedding model...")
 embed_model = HuggingFaceEmbedding()
 
 
-# @tool
+@tool
 def rag_query_tool(query: str):
     """
     Answers a query by retrieving relevant documents and generating a response.
@@ -35,7 +35,7 @@ def rag_query_tool(query: str):
         - The function loads the embedding model and LLM each time it is called.
     """
 
-    settings = AgentSettings()
+    settings = AgentSettings() #type: ignore
     vector_store_path = settings.VECTOR_STORE_DIR
     collection_name = settings.COLLECTION_NAME
 
@@ -66,7 +66,7 @@ def rag_query_tool(query: str):
             "source_files": list(source_file_names)}
 
 
-output = rag_query_tool(query="Explain Ecosystem and Evolution.")
-print(output)
-print(output["answer"])
-print(output["source_files"])
+# output = rag_query_tool(query="Explain Ecosystem and Evolution in 2-3 lines .")
+# # print(output)
+# print(output["answer"])
+# print(output["source_files"])
