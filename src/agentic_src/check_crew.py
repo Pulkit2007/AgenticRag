@@ -11,8 +11,8 @@ input_data = {
     "chat_history": {}
 }
 
-result = qa_crew.kickoff(input_data)
+# result = qa_crew.kickoff(input_data)
 
-result_dict = result.to_dict()
+# result_dict = result.to_dict()
 
-pprint(result_dict)
+# pprint(result_dict)
