@@ -3,7 +3,6 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List
 from src.agentic_src.tasks.qa_task import AnswerStructure
-
 from src.backend_src.service.chat import get_answers
 
 logger = logging.getLogger(__name__)
